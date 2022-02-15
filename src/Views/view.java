@@ -13,6 +13,8 @@ import javax.swing.*;
  */
 public class view extends JFrame{
         
+    private JTable board;
+    
     public view(){
         this.setTitle("BOARD");
         this.setBounds(0, 0 ,500, 500);
@@ -21,16 +23,17 @@ public class view extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     
-    public void initBoard(String[][] rows){
+    public void renderBoard(String[][] rows){
         String[] names = new String[rows.length];
         for(int i=0;i<rows.length;i++){
             names[i] = i+"";
         }
-        JTable board = new JTable(rows,names);
+        board = new JTable(rows,names);
         board.setTableHeader(null);
         board.setRowHeight((this.getHeight()-35)/rows.length);
         
         this.add(board, BorderLayout.CENTER);
+        this.setVisible(true);
     }
     
 }

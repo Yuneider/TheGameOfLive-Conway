@@ -23,29 +23,9 @@ public class lifesGame {
         
         board.insertAliveCells();
         
-//        System.out.print("How many cell will be alive?:");
-//        int alive = sc.nextInt();
-//        board.showBoard();
-//        for(int i=0;i<alive;i++){
-//            System.out.print("Insert row:");
-//            int row = sc.nextInt();
-//            System.out.print("Insert Column:");
-//            int column = sc.nextInt();
-//            board.setAliveCell(row, column);
-//            board.showBoard();
-//        }
-//        
-//        System.out.println("Game will start in...");
-//        Thread.sleep(1000);
-//        System.out.println("3");
-//        Thread.sleep(1000);
-//        System.out.println("2");
-//        Thread.sleep(1000);
-//        System.out.println("1");
-//        Thread.sleep(1000);
-//        System.out.println("Game started:");
-//        
-//        board.startGame();
+        JOptionPane.showMessageDialog(null, "The game will start soon");
+        
+        board.startGame();
         
     }
     
