@@ -39,9 +39,9 @@ public class boardController {
         for(int i=0;i<board.getBoard().length;i++){
             for(int j=0;j<board.getBoard().length;j++){
                 if(board.getBoard()[i][j].isAlive())
-                    result[i][j] = "X";
-                else
                     result[i][j] = "O";
+                else
+                    result[i][j] = "X";
             }
         }
         return result;

@@ -23,10 +23,9 @@ public class lifesGame {
         
         board.insertAliveCells();
         
-        JOptionPane.showMessageDialog(null, "The game will start soon");
+        JOptionPane.showMessageDialog(null, "Hit enter to start the game");
         
-        board.startGame();
-        
+        board.startGame();   
     }
     
 }

@@ -6,6 +6,7 @@ package Views;
 
 import java.awt.BorderLayout;
 import javax.swing.*;
+import tableConfig.*;
 
 /**
  *
@@ -24,12 +25,15 @@ public class view extends JFrame{
     }
     
     public void renderBoard(String[][] rows){
-        String[] names = new String[rows.length];
-        for(int i=0;i<rows.length;i++){
-            names[i] = i+"";
-        }
-        board = new JTable(rows,names);
-        board.setTableHeader(null);
+        board = new JTable(new customeModel(rows)){
+            
+            public Class getColumnClass(int col){
+                return ((customeModel)getModel()).data[0][col].getClass();
+            }
+        
+        };
+        
+        board.setDefaultRenderer(String.class, new cellRenderer());
         board.setRowHeight((this.getHeight()-35)/rows.length);
         
         this.add(board, BorderLayout.CENTER);
