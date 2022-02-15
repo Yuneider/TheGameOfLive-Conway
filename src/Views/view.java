@@ -4,7 +4,8 @@
  */
 package Views;
 
-import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import javax.swing.*;
 
 /**
  *
@@ -12,8 +13,24 @@ import javax.swing.JFrame;
  */
 public class view extends JFrame{
         
-    public void initBoard(){
+    public view(){
+        this.setTitle("BOARD");
+        this.setBounds(0, 0 ,500, 500);
+        this.setLocationRelativeTo(null);
+        this.setResizable(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+    
+    public void initBoard(String[][] rows){
+        String[] names = new String[rows.length];
+        for(int i=0;i<rows.length;i++){
+            names[i] = i+"";
+        }
+        JTable board = new JTable(rows,names);
+        board.setTableHeader(null);
+        board.setRowHeight((this.getHeight()-35)/rows.length);
         
+        this.add(board, BorderLayout.CENTER);
     }
     
 }

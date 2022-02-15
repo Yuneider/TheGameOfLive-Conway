@@ -19,14 +19,29 @@ public class boardController {
     public boardController(int size) {
         board = new board(size);
         auxBoard = new board(size);
+        view = new view();
     } 
     
     public void insertAliveCells(){
-        
+        view.initBoard(generateBoard());
+        view.setVisible(true);
     }
     
+    private String[][] generateBoard(){
+        String[][] result = new String[board.getBoard().length][board.getBoard().length];
+        for(int i=0;i<board.getBoard().length;i++){
+            for(int j=0;j<board.getBoard().length;j++){
+                if(board.getBoard()[i][j].isAlive())
+                    result[i][j] = "X";
+                else
+                    result[i][j] = "O";
+            }
+        }
+        return result;
+    } 
+    
     public void showBoard(){
-        
+        view.setVisible(true);
     }
     
 //    public void startGame() throws InterruptedException {
